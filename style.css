@@ -1,0 +1,201 @@
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #ffffff;
+    --secondary-color: #e8e8e8;
+
+    --text-color: #000000;
+    --button-color: #ffffff;
+
+    --interaction-color: #1B90F4;
+    --hover-color: rgba(27, 144, 244, .8);
+
+    --valid-color: #32CD32;
+    --invalid-color: #cc0000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-color: #282A37;
+        --secondary-color: #3C404A;
+    
+        --text-color: #ffffff;
+    }
+}
+
+body {
+    background-color: var(
+        --main-color
+    );
+    color: var(
+        --text-color
+    );
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    height: 5em;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    position: fixed;
+    margin: 0 auto;
+    z-index: 2;
+    background-color: var(--main-color);
+    padding: .5em;
+    box-shadow: .1em .1em .5em var(--main-color);
+}
+
+nav ul li {
+    background-color: var(--interaction-color);
+    padding: .5em 1em;
+    margin: 0 .5em;
+    border-radius: .5em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--button-color);
+}
+
+
+main {
+    max-width: 900px;
+    margin: 0 auto;   
+    display: grid;
+    place-content: center; 
+}
+
+form {
+    z-index: 1;
+}
+
+fieldset {
+    margin: 2em 0;
+    padding: 1em;
+    border: none;
+}
+
+legend {
+    padding: .2em 0;
+    color: var(--text-color);
+    margin-left: 0;
+}
+
+input {
+    display: flex;
+    margin-bottom: 1em;
+    position: relative;
+    background-color: var(
+        --secondary-color
+    );
+    border:none;
+    
+    color: var(
+        --text-color
+    )
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"]{
+    margin-top: .5em;
+    padding: .8em;
+    width: 100%;
+    border-radius: .8em;
+}
+
+
+input[type="text"]:not(:focus):not(:placeholder-shown):invalid {
+    border-bottom: 2px solid var(--invalid-color);
+}
+
+input[type="text"]:not(:focus):not(:placeholder-shown):valid {
+    border-bottom: 2px solid var(--valid-color);
+}
+
+input[type="radio"] {
+    opacity: 0;  
+}
+
+form label:has(input:checked) {
+    background-color: var(--interaction-color);
+    color: var(--button-color);
+} 
+
+.radioset {
+    display: flex;
+}
+
+.radioset label {
+    position: relative;
+    width: 2.5em;
+    aspect-ratio: 1/1;
+    outline: 1px solid var(--main-color);
+    display: flex;
+    background-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.radioset label:hover,
+.radioset label:focus,
+.radioset input[type="radio"]:focus {
+    background-color: var(--hover-color);
+    color: white;
+}
+
+.radioset label:first-of-type {
+    border-radius: .8em 0 0 .8em;
+}
+
+.radioset label:last-of-type {
+    border-radius: 0 .8em .8em 0;
+}
+
+.radioset label span {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+}
+
+input[type="submit"] {
+    margin-left: auto;
+    background-color: var(
+        --interaction-color
+    );
+    color: var(--button-color);
+    padding: .8em 1.5em;
+    border-radius: .4em;
+}
+
+body:has(#wafs:focus-within) #wafs h2 {
+    text-decoration: underline;
+}
+
+body:has(#wafs:valid) nav ul li:first-of-type{
+    background-color: var(--valid-color);
+}
+
+@supports not selector(:has(*)) {
+    input[type="radio"] {
+        opacity: 1;  
+    }
+
+    .radioset label {
+        opacity: 1;
+    }
+}
