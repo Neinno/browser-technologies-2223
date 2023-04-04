@@ -41,6 +41,7 @@ header {
     height: 5em;
 }
 
+
 nav {
     display: flex;
     justify-content: center;
@@ -74,12 +75,12 @@ nav ul li a {
 main {
     max-width: 900px;
     margin: 0 auto;   
-    display: grid;
-    place-content: center; 
 }
 
 form {
     z-index: 1;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 fieldset {
@@ -137,11 +138,12 @@ form label:has(input:checked) {
 
 .radioset {
     display: flex;
+    width: 100%;
 }
 
 .radioset label {
     position: relative;
-    width: 2.5em;
+    width: 100%;
     aspect-ratio: 1/1;
     outline: 1px solid var(--main-color);
     display: flex;
