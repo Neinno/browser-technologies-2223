@@ -47,16 +47,18 @@
                     <legend>Gegevens</legend>
                         <label for="naam">Naam*
                             <input type="text" id="naam" placeholder="Voor en achternaam" required>
-                            
                         </label>
+                        
                         
                         <label for="Studentnummer">Student nummer*
                             <input type="text" id="Studentnummer" inputmode="numeric" placeholder="Studenten nummer" pattern="[5-6][0-9]{8}" required>
                         </label>
+                        <span>Een studentnummer begint met 5 of 6 en heeft 9 cijfers.</span>
 
                         <label for="email">Email*
                             <input type="email" id="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>  
                         </label>
+                        <span>Een email moet een @ en een domein bevatten.</span>
                         
                 </fieldset>
 

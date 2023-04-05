@@ -111,6 +111,12 @@ main {
     background-color: var(--hover-color);
 }
 
+#studentinfo span {
+    display: block;
+    margin-bottom: 2em;
+    color: #9d9ea1;
+}
+
 form {
     z-index: 1;
     max-width: 500px;
