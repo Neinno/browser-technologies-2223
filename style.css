@@ -38,7 +38,7 @@ body {
 }
 
 header {
-    height: 5em;
+    height: 7em;
 }
 
 
@@ -50,20 +50,26 @@ nav {
 
 nav ul {
     list-style: none;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     position: fixed;
-    margin: 0 auto;
+    width: 100%;
+    gap: .25em;
     z-index: 2;
+    padding: .5em 0;
     background-color: var(--main-color);
-    padding: .5em;
     box-shadow: .1em .1em .5em var(--main-color);
+    max-width: 700px;
 }
 
 nav ul li {
     background-color: var(--interaction-color);
-    padding: .5em 1em;
+    padding: .5em;
     margin: 0 .5em;
     border-radius: .5em;
+    font-size: 1rem;
+    width: 25vw;
+    text-align: center;
 }
 
 nav ul li a {
@@ -81,11 +87,11 @@ form {
     z-index: 1;
     max-width: 500px;
     margin: 0 auto;
+    padding: .5em;
 }
 
 fieldset {
     margin: 2em 0;
-    padding: 1em;
     border: none;
 }
 
@@ -182,22 +188,90 @@ input[type="submit"] {
     color: var(--button-color);
     padding: .8em 1.5em;
     border-radius: .4em;
+    cursor: pointer;
 }
 
-body:has(#wafs:focus-within) #wafs h2 {
-    text-decoration: underline;
+button {
+    background-color: var(
+        --interaction-color
+    );
+    color: var(--button-color);
+    border:0;
+    border-radius: .4em;
+    width: 2.5em;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: var(--hover-color);
+}
+
+.radioset label:has(:focus) {
+    background-color: var(--hover-color);
+    color: white;
+}
+
+
+body:has(#wafs:focus-within) nav ul li:first-of-type {
+    outline: 2px solid var(--valid-color);
 }
 
 body:has(#wafs:valid) nav ul li:first-of-type{
     background-color: var(--valid-color);
 }
 
+body:has(#cssttr:valid) nav ul li:nth-of-type(2){
+    background-color: var(--valid-color);
+}
+
+body:has(#pwa:valid) nav ul li:nth-of-type(3) {
+    background-color: var(--valid-color);
+}
+
+body:has(#bt:valid) nav ul li:nth-of-type(4) {
+    background-color: var(--valid-color);
+}
+
+body:has(#rtw:valid) nav ul li:nth-of-type(5) {
+    background-color: var(--valid-color);
+}
+
+body:has(#hcd:valid) nav ul li:nth-of-type(6) {
+    background-color: var(--valid-color);
+}
+
+#wafs,
+#cssttr,
+#pwa,
+#bt,
+#rtw,
+#hcd {
+    scroll-margin-top: 7em;
+}
+
 @supports not selector(:has(*)) {
     input[type="radio"] {
         opacity: 1;  
     }
+}
 
-    .radioset label {
-        opacity: 1;
+@media screen and (min-width: 500px) {
+    header {
+        height: 3em;
+    }
+
+    nav ul {
+        display: flex;
+    } 
+
+    #wafs,
+    #cssttr,
+    #pwa,
+    #bt,
+    #rtw,
+    #hcd {
+        scroll-margin-top: 5em;
     }
 }
