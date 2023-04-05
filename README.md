@@ -73,13 +73,9 @@ Ik heb op de volgende browsers getest:
 - Obscure browser: Flow
 
 
-### Android: Samsung Internet
-Op Samsung internet lijkt alles te werken zoals het hoort. Wat ik getest heb is:
-- Has selector
-- Het toetsenbord voor de nummers
-- Javascript
-- CSS
+Op samsung internet lijken de kleuren wel erg anders te zijn dan op andere browsers. Ook ben ik er achter gekomen dan je telefoon automatisch een hoofdletter maakt van je eerste letter. Dit zorgt ervoor dat email invalid word.
 
-Voor deze test heb ik niks veranderd.
-
+#### Samsung internet
 <img src="/readmeimgs/ssinternet.jpeg" width=500px>
+
+Op IOS: Safari lijkt alles gewoon goed te werken, maar heeft ook het zelfde probleem met het email veld.

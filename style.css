@@ -161,6 +161,14 @@ input[type="email"]{
     border-bottom: 2px solid var(--valid-color);
 }
 
+#studentinfo input[type="email"]:not(:focus):not(:placeholder-shown):invalid {
+    border-bottom: 2px solid var(--invalid-color);
+}
+
+#studentinfo input[type="email"]:not(:focus):not(:placeholder-shown):valid {
+    border-bottom: 2px solid var(--valid-color);
+}
+
 
 form label:has(input:checked) {
     background-color: var(--interaction-color);
