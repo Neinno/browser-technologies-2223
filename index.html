@@ -43,17 +43,18 @@
             
             <form action="submit.html">
                 <h1>Enquête CMD Minor | Web Design and Development </h1>
-                <fieldset>
+                <fieldset id="studentinfo">
                     <legend>Gegevens</legend>
-                        <label for="naam">Naam
+                        <label for="naam">Naam*
                             <input type="text" id="naam" placeholder="Voor en achternaam" required>
+                            
                         </label>
                         
-                        <label for="Studentnummer">Student nummer
+                        <label for="Studentnummer">Student nummer*
                             <input type="text" id="Studentnummer" inputmode="numeric" placeholder="Studenten nummer" pattern="[5-6][0-9]{8}" required>
                         </label>
 
-                        <label for="email">Email
+                        <label for="email">Email*
                             <input type="text" id="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>  
                         </label>
                         
@@ -1253,10 +1254,12 @@
                     </fieldset>
                 </fieldset>
 
-                
-                <button type="button" id="back"><</button>
+                <section>
+                    <button type="button" id="back"><</button>
 
-                <button type="button" id="forward">></button>
+                    <button type="button" id="forward">></button>
+                </section>
+               
                 
                 
                 <input type="submit" value="submit">
