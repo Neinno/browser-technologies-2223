@@ -136,33 +136,33 @@ function setHash(index) {
 
 
 
-const nameInput = document.querySelector('#naam');
-const studentInput = document.querySelector('#Studentnummer');
-const emailInput = document.querySelector('#email');
+// const nameInput = document.querySelector('#naam');
+// const studentInput = document.querySelector('#Studentnummer');
+// const emailInput = document.querySelector('#email');
 
-// Load form data from local storage:
-nameInput.value = localStorage.getItem('naam') || '';
-studentInput.value = localStorage.getItem('Studentnummer') || '';
-emailInput.value = localStorage.getItem('email') || '';
+// // Load form data from local storage:
+// nameInput.value = localStorage.getItem('naam') || '';
+// studentInput.value = localStorage.getItem('Studentnummer') || '';
+// emailInput.value = localStorage.getItem('email') || '';
 
-// Save form data to local storage when input changes:
-nameInput.addEventListener('input', () => {
-  localStorage.setItem('naam', nameInput.value);
-});
+// // Save form data to local storage when input changes:
+// nameInput.addEventListener('input', () => {
+//   localStorage.setItem('naam', nameInput.value);
+// });
 
-studentInput.addEventListener('input', () => {
-  localStorage.setItem('Studentnummer', studentInput.value);
-});
+// studentInput.addEventListener('input', () => {
+//   localStorage.setItem('Studentnummer', studentInput.value);
+// });
 
-emailInput.addEventListener('input', () => {
-  localStorage.setItem('email', emailInput.value);
-});
+// emailInput.addEventListener('input', () => {
+//   localStorage.setItem('email', emailInput.value);
+// });
 
-// Save form data to local storage when the form is submitted:
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
+// // Save form data to local storage when the form is submitted:
+// form.addEventListener('submit', (event) => {
+//   event.preventDefault();
 
-  localStorage.setItem('naam', nameInput.value);
-  localStorage.setItem('Studentnummer', studentInput.value);
-  localStorage.setItem('email', emailInput.value);
-});
+//   localStorage.setItem('naam', nameInput.value);
+//   localStorage.setItem('Studentnummer', studentInput.value);
+//   localStorage.setItem('email', emailInput.value);
+// });
