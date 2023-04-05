@@ -21,6 +21,18 @@ function showFieldset(index) {
             fieldset.style.display = 'none';
         }
     });
+
+    if (index === 0) {
+        backbtn.style.display = 'none';
+    } else {
+        backbtn.style.display = 'block';
+    }
+
+    if (index === 6) {
+        forwardbtn.style.display = 'none';
+    } else {
+        forwardbtn.style.display = 'block';
+    }
 }
 
 showFieldset(currentFieldsetIndex);
@@ -83,6 +95,8 @@ hcd.addEventListener("click", () => {
     setHash(currentFieldsetIndex);
     window.scrollTo(0,0);
 });
+
+
 
 backbtn.addEventListener("click", () => {
     window.scrollTo(0,0);
@@ -152,7 +166,3 @@ form.addEventListener('submit', (event) => {
   localStorage.setItem('Studentnummer', studentInput.value);
   localStorage.setItem('email', emailInput.value);
 });
-
-
-
-

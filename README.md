@@ -73,9 +73,65 @@ Ik heb op de volgende browsers getest:
 - Obscure browser: Flow
 
 
-Op samsung internet lijken de kleuren wel erg anders te zijn dan op andere browsers. Ook ben ik er achter gekomen dan je telefoon automatisch een hoofdletter maakt van je eerste letter. Dit zorgt ervoor dat email invalid word.
+Op samsung internet lijken de kleuren wel erg anders te zijn dan op andere browsers. Ook ben ik er achter gekomen dan je telefoon automatisch een hoofdletter maakt van je eerste letter. Dit zorgt ervoor dat email invalid word. Dit kwam door een probleem met het input veld. Dit was een text en geen email. Dit heb ik aangepast, en het werkt nu.
 
 #### Samsung internet
-<img src="/readmeimgs/ssinternet.jpeg" width=500px>
+<img src="/readmeimgs/ssinternet.jpeg" width=200px>
 
-Op IOS: Safari lijkt alles gewoon goed te werken, maar heeft ook het zelfde probleem met het email veld.
+Na deze aanpassingen werkt het op zowel android, als IOS. Beide supporten de :has selector, en zorgt ervoor dat mijn form werkt.
+
+Voor zowel Mac en Windows werken chrome perfect. Voor MAC werkt safari ook prima. Het enige probleem van het gebruik van desktop browsers is firefox. Firefox support namelijk geen :has selector. Dit heb ik opgelost door de radio buttons alleen te verstoppen als de browser wel :has support. Als dit niet het geval is zijn de radio buttons wel zichtbaar. Ook deze heb ik weer een aparte styling gegeven zodat de buttons zelf niet zichtbaar zijn.
+
+#### Firefox oplossing
+<img src="/readmeimgs/firefox.png" width=300px>
+
+
+#### Flow
+Flow was mijn obscure browser om mee te testen. Ik wist zelf niet helemaal wat hij wel en niet deed. Ik kwam erachter dat hij mijn form validatie niet support, maar het form is nog steeds bruikbaar. Ook support hij geen light of dark mode. Dus hij pakt de styling van de light mode. 
+
+<img src="/readmeimgs/flow.png" width=300px>
+
+Met het gebruiken van flow heb ik ook geen controle over de styling van mijn radio buttons. Ik heb ze dus op Flow zichtbaar gelaten, maar heb er wel voor gezorgt dat je er over kan hoveren. Omdat flow geen appearance: none toe laat heb ik de volgende code toegepast speciaal voor de Flow browser.
+
+```css
+@supports not (appearance: none) {
+    input[type="radio"] {
+        height: 100%;
+        bottom: 0;
+        top: 0;
+        display: block;
+    }
+
+    .radioset label { 
+        height: 3em;
+    }
+
+    .radioset label span { 
+        height: 1em; 
+        display: block;
+        margin: 0 auto;
+        top:.5em;
+    }
+
+    input[type="radio"]:checked,
+    input[type="radio"]:hover {
+        background-color: var(--secondary-color);
+    }
+
+   .radioset label input[type="radio"]:hover  {
+        background-color: var(--interaction-color);
+   }
+}
+```
+
+### Screen reader
+Door te testen op screen reader ben ik er achter gekomen dat sommige dingen nog niet helemaal lekker werken. Hij spreekt bijvoorbeeld niet alle buttons uit. Dit zijn de verder en terug knoppen. Hier heb ik een aria-label aan toe gevoegd. Nu als de knop focus heeft spreek hij deze wel uit.
+
+Ook heb ik Aria labels toegevoegd bij de radiobuttons, want deze werden ook niet helemaal uitgesproken. 
+
+```html
+<input type="radio" name="inzichthcd" aria-label="Inzicht" required>
+```
+
+
+
