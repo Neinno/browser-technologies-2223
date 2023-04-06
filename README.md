@@ -134,4 +134,22 @@ Ook heb ik Aria labels toegevoegd bij de radiobuttons, want deze werden ook niet
 ```
 
 
+### Contrast
+Ik heb gekeken hoe het contrast is van mijn pagina met behulp van deze website:
+https://webaim.org/resources/contrastchecker/
+
+Ik heb getest voor zowel dark, en light mode.
+
+#### Light mode met elementen
+<img src="/readmeimgs/contrast1.png" width=300px>
+
+#### Dark mode met elementen
+<img src="/readmeimgs/contrast2.png" width=300px>
+
+#### Dark mode met text
+<img src="/readmeimgs/contrast3.png" width=300px>
+
+Mijn website komt goed uit de contrast checker.
+
+
 
